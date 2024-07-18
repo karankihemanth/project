@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        .otp-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        .otp-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Reset Password</h2>
+    <form id="resetPasswordForm">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="button" class="otp-button" onclick="sendOTP()">Send OTP</button>
+        <input type="text" id="otp" placeholder="Enter OTP" required>
+        <input type="password" id="newPassword" placeholder="New Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+        <input type="submit" value="Reset Password">
+    </form>
+</div>
+
+<script>
+    function sendOTP() {
+        const email = document.getElementById('email').value;
+        fetch('/forgot-password', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        })
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => alert('Error: ' + error));
+    }
+
+    document.getElementById('resetPasswordForm').onsubmit = function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        const otp = document.getElementById('otp').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (newPassword !== confirmPassword) {
+            alert("Passwords do not match!");
+        } else {
+            fetch('/reset-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, otp, newPassword, confirmPassword })
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => alert('Error: ' + error));
+        }
+    }
+</script>
+
+</body>
+</html>
