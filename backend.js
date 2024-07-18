@@ -43,9 +43,9 @@ app.use(express.static('public'));
 
 // Register route
 app.post('/register', (req, res) => {
-    const { name, email, pass, confirmPass } = req.body;
+    const { name, email,tel, pass, confirmPass } = req.body;
 
-    if (!name || !email || !pass || !confirmPass) {
+    if (!name || !email ||!tel || !pass || !confirmPass) {
         return res.status(400).send('All fields are required');
     }
     const checkEmailSql = 'SELECT * FROM userinfo WHERE mail = ?';
@@ -60,8 +60,8 @@ app.post('/register', (req, res) => {
         }
         bcrypt.hash(pass, 10, (err, hash) => {
             if (err) throw err;
-            const sql = 'INSERT INTO userinfo (name, mail, pass) VALUES (?, ?, ?)';
-            db.query(sql, [name, email, hash], (err, result) => {
+            const sql = 'INSERT INTO userinfo (name, mail, pass,phone) VALUES (?, ?, ?,?)';
+            db.query(sql, [name, email,hash,tel], (err, result) => {
                 if (err) throw err;
                 res.send('User registered...');
             });
