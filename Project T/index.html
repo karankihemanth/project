@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Budget Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: hidden; /* Disable scrolling initially */
+        }
+        .section {
+            display: none; /* Hide all sections by default */
+            width: 100%;
+            min-height: 100vh; /* Ensure sections take up full screen height */
+            padding-top: 70px; /* Ensure content is not hidden under the fixed header */
+            
+        }
+        .active {
+            display: block; /* Show the active section */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            position: fixed;
+            color: rgb(255, 255, 255);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.7); /* Set transparency here */
+        }
+        header img {
+            height: 50px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            margin-right: 50px; /* Move nav links slightly to the left */
+        }
+        nav a {
+            text-decoration: none;
+            color: #ecb110;
+            font-weight: bold;
+            font-size: 120%;
+        }
+        h1 {
+            color: #fffcfc;
+            margin: 0;
+            text-align: center;
+            margin-top: 18%;
+            font-size: 450%;
+        }
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .container {
+            flex: 30%;
+            gap: 20px;
+        }
+        .web2 {
+            flex: 50%;
+        }
+        .budget-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            width: 280px;
+            height: 60px;
+        }
+        .budget-button.high {
+            background-color: #4caf50;
+            color: white;
+        }
+        .budget-button.medium {
+            background-color: #ff9800; 
+            color: white;
+        }
+        .budget-button.low {
+            background-color: #f44336; 
+            color: white;
+        }
+        .budget-button:hover {
+            background-color: black;
+            opacity: 0.9; 
+        }
+        .trip {
+            background-color: #f44336;
+            color: #fffcfc;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            width: 280px;
+            height: 60px;
+        }
+        .h1 {
+            background-image: url('T1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 158px;            
+            width: 75%;
+        }
+        .search-container {
+            background-image: url('T3.webp');
+            gap: 5px;
+            background-repeat: no-repeat;
+            text-align: center;
+            background-size: cover;
+            padding: 250px;
+            color: #fffcfc;
+            margin-top: -5.5%;
+
+        }
+        .search-input {
+            padding: 10px;
+            width: 200px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            position: relative;
+        }
+        .search {
+            width: 120px;
+            height: 35px;
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo1.png" alt="Logo">
+        <nav>
+            <li><a href="#homeSection">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </nav>
+    </header>
+    
+    <div class="section active" id="homeSection">
+        <div class="h1">
+            <h1>Travel Budget Management</h1><br>
+            <button class="trip" id="planTripButton">Plan My Trip</button>
+        </div>
+    </div>
+    
+    <div class="section" id="searchSection">
+        <div class="search-container">
+            <h2>Enter Your Starting Destination And Ending Destination</h2>
+            <input type="text" class="search-input" placeholder="Starting Destination..." />
+            <input type="text" class="search-input" placeholder="Final Destination..." />
+            <button class="search" id="searchButton">Search</button>
+        </div>
+    </div>
+    
+    <div class="section" id="budgetSection">
+        <div class="main-container">
+            <div class="content">
+                <div class="container">
+                    <h2>CHOOSE THE BUDGET FOR YOUR TRAVEL</h2>
+                    <button class="budget-button high" data-budget="high">High Budget</button>
+                    <button class="budget-button medium" data-budget="medium">Medium Budget</button>
+                    <button class="budget-button low" data-budget="low">Low Budget</button>
+                </div>
+                <div class="web2">
+                    <img src="india.png" width="70%">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function disableScrolling() {
+            document.body.style.overflowY = 'hidden';
+        }
+        
+        function enableScrolling() {
+            document.body.style.overflowY = 'auto';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('planTripButton').addEventListener('click', function() {
+            document.getElementById('homeSection').classList.add('active');
+            document.getElementById('searchSection').classList.add('active');
+            enableScrolling(); // Enable scrolling when search section is active
+            scrollToSection('searchSection'); // Scroll to the search section
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            document.getElementById('homeSection').classList.add('active');
+            document.getElementById('searchSection').classList.add('active');
+            document.getElementById('budgetSection').classList.add('active');
+            scrollToSection('budgetSection'); // Scroll to the budget section
+        });
+
+        const budgetButtons = document.querySelectorAll('.budget-button');
+        budgetButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const budget = this.getAttribute('data-budget');
+                alert(`Showing options for ${budget} budget`);
+            });
+        });
+
+        disableScrolling(); // Disable scrolling initially
+    </script>
+</body>
+</html>

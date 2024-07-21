@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo1.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to our company. We are dedicated to providing the best services to our customers. Our team of professionals is here to help you achieve your goals.</p>
+            <h2>Our Mission</h2>
+            <p>Our mission is to minimize the budget for travelling that bring value to our customers. We strive for excellence in every project we undertake.</p>
+            <h2>Our Team</h2></div>
+            <div class="team">
+                <div class="team-member">
+                    <img src="team1.jpg" alt="Team Member 1">
+                    <h3>Karanki Hemanth Kumar</h3>
+                    <p>Student</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.jpg" alt="Team Member 2">
+                    <h3>Katreddi Sai Srinivas</h3>
+                    <p>Student</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member 3">
+                    <h3>Kondaveeti Mohan Satya Sriram</h3>
+                    <p>Student</p>
+                </div>
+            </div>
+        
+    </section>
+    
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0px;
+        position: fixed;
+        color: rgb(255, 255, 255);
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #f44336;
+        
+    }
+    header img {
+        height: 50px;
+        margin-left: 20px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    
+    nav ul li a.active, nav ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .about-section {
+        padding: 2rem;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+    
+    .team {
+        display: flex;
+        background-color: #000;
+        color: white;
+        padding: 2rem 0;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    
+    .team-member {
+        text-align: center;
+    }
+    
+    .team-member img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+</style>
+</html>

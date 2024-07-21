@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo1.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <img src="P1.jpeg" alt="Profile Picture" class="profile-pic">
+                <h1>John Doe</h1>
+                <button class="sign-out">Sign Out</button>
+            </div>
+            <div class="profile-details">
+                <h2>About Me</h2>
+                <p>Hi, I'm John Doe, a travel enthusiast and budget management expert. I have been traveling around the world for the past 10 years, and I love sharing my experiences and tips with fellow travelers.</p>
+                <h2>Contact Information</h2>
+                <p>Email: john.doe@example.com</p>
+                <p>Phone: +123-456-7890</p>
+            </div>
+        </div>
+    </section>
+   
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+       
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0px;
+        position: fixed;
+        color: rgb(255, 255, 255);
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #f44336;
+        
+    }
+    header img {
+        height: 50px;
+        margin-left: 20px;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    
+    nav ul li a.active, nav ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .profile-section {
+        padding: 2rem;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 100px;
+    }
+    
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .profile-pic {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    
+    .sign-out {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .sign-out:hover {
+        background-color: #d32f2f;
+    }
+    
+    .profile-details {
+        text-align: left;
+        margin-top: 2rem;
+    }
+    
+    .profile-details h2 {
+        color: #f33446;
+        margin-bottom: 0.5rem;
+    }
+  
+    
+</style>
+</html>

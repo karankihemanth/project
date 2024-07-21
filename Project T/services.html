@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo1.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="services-section">
+        <div class="container">
+            <h1>Our Services</h1>
+            <div class="service">
+                <h2>Personalized Budget Planning</h2>
+                <p>We help you create a customized budget plan for your travels, ensuring you can enjoy your trip without financial stress.</p>
+            </div>
+            <div class="service">
+                <h2>Expense Tracking</h2>
+                <p>Track all your travel expenses in real-time with our easy-to-use tracking tools. Stay on top of your budget wherever you are.</p>
+            </div>
+            <div class="service">
+                <h2>Cost-saving Tips</h2>
+                <p>Receive expert advice and tips on how to save money on flights, accommodations, and other travel-related expenses.</p>
+            </div>
+            <div class="service">
+                <h2>Financial Consultation</h2>
+                <p>Get one-on-one financial consultation with our experts to make the most out of your travel budget.</p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0px;
+        position: fixed;
+        color: rgb(255, 255, 255);
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #f44336;
+        
+    }
+    header img {
+        height: 50px;
+        margin-left: 20px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    
+    nav ul li a.active, nav ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .services-section {
+        padding: 2rem;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding-top: 80px;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .service {
+        background-color: #fff;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service h2 {
+        color: #f44336;
+        margin-bottom: 0.5rem;
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+</style>
+</html>
